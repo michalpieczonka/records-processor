@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:5.0.13-focal
+    restart: always
+    ports:
+      - "27017:27017"
+    command: --wiredTigerCacheSizeGB 4.0
+
+  rankomat-app:
+    image: michalpieczonka4/mp-scala-rankomat:0.1
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+        - mongo
+    environment:
+        - INITIALIZE_CONFIG_ON_STARTUP=true
+        - INITIALIZE_RECORDS_ON_STARTUP=true
+        - MONGO_URI=mongodb://mongo:27017
+        - MONGO_DB_NAME=rankomat-app
+        - HTTP_SERVER_PORT=8080

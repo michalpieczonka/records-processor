@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "4e9417c7-4cce-444e-98ce-adaf6a219949",
+		"name": "RankomatApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21894645"
+	},
+	"item": [
+		{
+			"name": "Data records",
+			"item": [
+				{
+					"name": "Create data record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" :  \"Jayson\",\n    \"phoneNumber\" : \"1234567890\",\n    \"amount\": 250\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/data-records",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data-records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Process data record",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/data-records",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data-records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get data record report",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data records processing configuration",
+			"item": [
+				{
+					"name": "Update records processing configuration",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"prioritiesByAmount\": [\n        {\n            \"from\": 0,\n            \"to\" : 1000,\n            \"priority\": 1\n        },\n        {\n            \"from\": 1001,\n            \"to\" : 2500,\n            \"priority\": 2\n        },\n        {\n            \"from\": 2501,\n            \"priority\": 3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/data-records/process-configuration",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data-records",
+								"process-configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get records processing configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/data-records/process-configuration",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data-records",
+								"process-configuration"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
