@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:5.0.13-focal
+    restart: always
+    ports:
+      - "27017:27017"
+    command: --wiredTigerCacheSizeGB 4.0
