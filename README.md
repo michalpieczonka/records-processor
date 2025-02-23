@@ -1,6 +1,7 @@
 # Recruitment task
 Developed rest api that matches requirements provided in task description.<br>
-Postman collection provided in ```setup``` directory.<br><br>
+Postman collection provided in ```setup``` directory.<br>
+Endpoints definitions provided in swagger.yml file located in ```setup``` directory.<br><br>
 Docker compose for running localy whole project or just database provided in ```setup``` directory.<br>
 By default application is initialized with some predefined data for configuration and testing purposes.<br>
 This can be modified by in ```docker-compose.yml``` file located in ```setup``` directory by those envs:<br>
